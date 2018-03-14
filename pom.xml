@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-
+        <module>hdfs-01-usage</module>
     </modules>
 
     <properties>
