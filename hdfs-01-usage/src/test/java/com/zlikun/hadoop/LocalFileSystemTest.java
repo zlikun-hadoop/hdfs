@@ -17,7 +17,7 @@ public class LocalFileSystemTest {
     public void test() throws IOException {
 
         // 设置用户名 ( 解决权限问题 )
-        System.setProperty("HADOOP_USER_NAME", "root");
+        System.setProperty("HADOOP_USER_NAME", "hadoop");
 
         Configuration conf = new Configuration();
 

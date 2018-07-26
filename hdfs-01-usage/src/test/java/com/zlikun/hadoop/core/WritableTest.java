@@ -1,4 +1,4 @@
-package com.zlikun.hadoop;
+package com.zlikun.hadoop.core;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.RawComparator;

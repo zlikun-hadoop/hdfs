@@ -26,38 +26,38 @@ public class FileSystemTest {
     public void test() throws IOException {
 
         // 设置用户名 ( 解决权限问题 )
-        System.setProperty("HADOOP_USER_NAME", "root");
+        System.setProperty("HADOOP_USER_NAME", "hadoop");
 
         // 使用默认配置获取文件系统对象
         Configuration conf = new Configuration();
         FileSystem fs = FileSystem.get(conf);
 
         // 创建目录
-        // drwxr-xr--   - root supergroup          0 2018-03-14 15:16 /zlikun
-        createDir(fs, "/zlikun");
+        // drwxr-xr--   - root supergroup          0 2018-03-14 15:16 /java
+        createDir(fs, "/java");
 
         // 创建文件
-        // -rw-r--r--   3 root supergroup         18 2018-03-14 15:16 /zlikun/server.txt
-        create(fs, "/zlikun/server.txt", "nginx tomcat jetty");
+        // -rw-r--r--   3 root supergroup         18 2018-03-14 15:16 /java/server.txt
+        create(fs, "/java/server.txt", "nginx tomcat jetty");
 
         // 追加内容
         // 需要配置：dfs.support.append = true
-        append(fs, "/zlikun/server.txt", " undertow");
+        append(fs, "/java/server.txt", " undertow");
 
         // 获取文件
-        list(fs, "/zlikun");
+        list(fs, "/java");
 
         // 获取文件( 打印文件内容 )
-        get(fs, "/zlikun/server.txt");
+        get(fs, "/java/server.txt");
 
         // 删除文件
-        delete(fs, "/zlikun/server.txt");
+        delete(fs, "/java/server.txt");
 
         // 判断目录是否存在
-        existsDir(fs, "/zlikun");
+        existsDir(fs, "/java");
 
         // 删除目录
-        deleteDir(fs, "/zlikun");
+        deleteDir(fs, "/java");
 
     }
 
